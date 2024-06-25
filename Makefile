@@ -14,12 +14,12 @@ up:
 
 start-kafka:
 	@echo "Setting up Kafka events..."
-	docker exec -it locationweatherservice_kafka_1 bash -c "\
+	docker exec -it kafka1 bash -c "\
 		if ! kafka-topics --list --bootstrap-server localhost:9092 | grep -q 'user-location-topic'; then \
 			kafka-topics --create --topic user-location-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1; \
 		fi; \
 		exit"
-	python kafka_consumer.py
+	python3 kafka_consumer.py
 
 start-service:
 	@echo "Starting User location-weather service..."
@@ -32,5 +32,5 @@ down:
 # Stop the containers and remove volumes and dependencies
 clean: down
 	rm -rf venv
-	docker-compose down -v
+	docker-compose down -v --remove-orphans
 	@sleep 5
