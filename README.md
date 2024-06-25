@@ -19,6 +19,7 @@
 * The error handling can be improved for various cases, instead of just one error-code 404, currently. 
 * The user-data along with location and weather can be stored and fetched from DB.
 * A better more-accurate weather-service provider can be chosen depending upon the need. 
+* Instead of simple pip - requirements file, Poetry toml can be used to better manage the dependencies.
 
 ---
 

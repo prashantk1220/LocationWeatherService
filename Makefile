@@ -2,6 +2,16 @@
 
 all: up start-kafka start-service
 
+# Ready the env and Start the containers using docker-compose
+up:
+	@echo "Creating virtual env and installing dependencies..."
+	python3 -m venv venv
+	sh venv/bin/activate
+	pip install -r requirements.txt
+	@echo "Starting Kafka and Zookeeper containers..."
+	docker-compose up -d
+	@sleep 5
+
 start-kafka:
 	@echo "Setting up Kafka events..."
 	docker exec -it locationweatherservice_kafka_1 bash -c "\
@@ -15,16 +25,12 @@ start-service:
 	@echo "Starting User location-weather service..."
 	python main.py
 
-# Start the containers using docker-compose
-up:
-	@echo "Starting Kafka and Zookeeper..."
-	docker-compose up -d
-	@sleep 5
-
 # Stop the containers
 down:
 	docker-compose down
 
-# Stop the containers and remove volumes
+# Stop the containers and remove volumes and dependencies
 clean: down
+	rm -rf venv
 	docker-compose down -v
+	@sleep 5
