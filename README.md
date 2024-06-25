@@ -26,5 +26,8 @@
 **Resources**
 
 * I googled for free weather services API. Found few opensource with minimal usage and also some available with python-library.
-* Created the docker-compose file for Kafka with help of ChatGPT. But it had too many issues to be fixed which consumed most of my time, like Network settings.
+* Created the docker-compose file for Kafka with help of ChatGPT. But it had too many issues to be fixed one such issue is with the network settings.
+* Also I have an old personal MacBook on which I'm unable to install kafka locally to use due to MacOS version issue.
+![plot](screenshot_MacOS-limitation.png)
+
   
