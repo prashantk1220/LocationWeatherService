@@ -1,6 +1,6 @@
 .PHONY: all up start-kafka start-service down clean
 
-all: up start-kafka start-service
+all: up start-service
 
 # Ready the env and Start the containers using docker-compose
 up:
