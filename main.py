@@ -12,7 +12,7 @@ app = FastAPI()
 async def get_user_weather(user_id: int) -> UserData:
     if user_id not in user_data:
         raise HTTPException(status_code=404, detail="User not found")
-
+    # parse the user-data to the model
     return UserData(**user_data[user_id])
 
 
@@ -24,4 +24,4 @@ async def docs_redirect():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8080)
