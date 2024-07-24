@@ -21,14 +21,4 @@
 * The user-data along with location and weather can be stored and fetched from DB.
 * A better more-accurate weather-service provider can be chosen depending upon the need. 
 * Instead of simple pip - requirements file, Poetry toml can be used to better manage the dependencies.
-
----
-
-**Resources**
-
-* I googled for free weather services API. Found few opensource with minimal usage and also some available with python-library.
-* Created the docker-compose file for Kafka with help of ChatGPT. But it had too many issues to be fixed one such issue is with the network settings.
-* Also I have an old personal MacBook on which I'm unable to install kafka locally to use due to MacOS version issue.
-![plot](screenshot_MacOS-limitation.png)
-
   
